@@ -47,8 +47,8 @@ export default function Navbar() {
         ))}
       </ul>
       <div className="flex justify-center gap-4">
-        <Link href={"/signin"}><SecoundryBtn style={"rounded-full"} title={"Sign in"}/></Link>
-        <Link href={"/register"}><PrimaryBtn style={"rounded-full"} title={"Register"}/></Link>
+        <Link href={"/authentication/signin"}><SecoundryBtn style={"rounded-full hover:text-black"} title={"Sign in"}/></Link>
+        <Link href={"/authentication/register"}><PrimaryBtn style={"rounded-full"} title={"Register"}/></Link>
       </div>
     </nav>
   );

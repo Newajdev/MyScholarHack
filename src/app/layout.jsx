@@ -1,8 +1,8 @@
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import Container from "./component/Container";
-import HeaderBG from "./component/HeaderBG";
-import Navbar from "./component/Navbar";
+import Container from "./component/LandingComponent/Container";
+import Header from "./component/LandingComponent/Header";
+import Footer from "./component/LandingComponent/Footer";
 
 const urbanist = Urbanist({
   subsets: ["urbanist"],
@@ -18,15 +18,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" data-theme="light">
       <body className={`${urbanist.className} antialiased`}>
-        <HeaderBG Height={"h-[1152px]"}>
-          <Container>
-            <Navbar/>
-          </Container>
-        </HeaderBG>
+
+        <Header/>        
 
         <Container>
           {children}
         </Container>
+
+        <Footer/>
       </body>
     </html>
   );
