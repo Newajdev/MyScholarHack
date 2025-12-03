@@ -2,13 +2,15 @@
 
 import Container from "../component/LandingComponent/Container";
 import SectionHead from "../component/LandingComponent/SectionHead";
-import IconicBtn from "../component/LandingComponent/IconicBtn";
-import { Icon } from "@iconify/react";
+import PrimaryBtn from "../component/LandingComponent/PrimaryBtn";
 import ProblemPoint from "../component/LandingComponent/ProblemPoint";
+import SolutionSteps from "../component/LandingComponent/SolutionSteps";
+import FeatureCard from "../component/LandingComponent/FeaturesCard";
 
 export default function Home() {
   return (
     <Container>
+      {/* Describe Problem */}
       <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
         <SectionHead
           Status={"Problem"}
@@ -43,6 +45,121 @@ export default function Home() {
             }
           />
         </div>
+      </section>
+
+      {/* Describe Solutions */}
+      <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <SectionHead
+          Status={"Problem"}
+          statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
+          title={" Your Stories. Your Voice. Your Success"}
+          description={
+            "MyScholarHack is different. We help you tell your authentic story by  learning who you really are."
+          }
+        />
+
+        <SolutionSteps
+          icon={"uil:user"}
+          title={"Build your Profile"}
+          descrtion={
+            "Upload your resume, transcripts, recommendation  letters, and even a writing sample. We learn your voice, your achievements, and  your unique experiences."
+          }
+          step={1}
+        />
+        <SolutionSteps
+          icon={"gis:map-user"}
+          title={"Find your Story"}
+          descrtion={
+            " Our AI guides you through discovering which of your  experiences best match each scholarship prompt. No inventing stories—just  highlighting what makes you special."
+          }
+          step={2}
+        />
+        <SolutionSteps
+          icon={"hugeicons:note-02"}
+          title={"Generate Your Essay"}
+          descrtion={
+            " Get a personalized first draft written in YOUR voice,  based on YOUR real achievements. Edit and refine until it's perfect. Or, if you  already have an idea but just need help to get it on paper, opt for “Coach Me” and  MyScholarHack will help you think through your first draft versus writing it for you"
+          }
+          step={3}
+        />
+        <SolutionSteps
+          icon={"carbon:tropical-storm-tracks"}
+          title={"Track Everything"}
+          descrtion={
+            " Keep all your applications organized in one place. Never  miss a deadline. See what's working."
+          }
+          step={4}
+        />
+
+        <PrimaryBtn
+          icon={"ri:arrow-right-line"}
+          title={"Start Writing Authentic Essays Today"}
+          style={"rounded-full"}
+        />
+      </section>
+
+      {/* Describe Solutions */}
+      <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <SectionHead
+          Status={"Feature"}
+          statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
+          title={"Your Stories. Your Voice. Your Success"}
+          description={
+            "MyScholarHack is different. We help you tell your authentic story by  learning who you really are."
+          }
+        />
+
+        <div className="grid grid-cols-3 gap-5">
+          <FeatureCard
+            icon={"fa6-solid:microphone-lines"}
+            title={"Voice Matching Technology"}
+            descritption={
+              "Upload a writing sample and we'll match your  unique voice and style. Your essays will sound like you wrote them—because the  ideas are all yours"
+            }
+            style={"bg-[#B46DFF]"}
+          />
+          <FeatureCard
+            icon={"solar:user-id-outline"}
+            title={"Smart Profile System"}
+            descritption={
+              " Store your resume, transcripts, letters, and  achievements once. We'll pull the right details for each scholarship automatically."
+            }
+            style={"bg-[#1D9B86]"}
+          />
+          <FeatureCard
+            icon={"healthicons:i-note-action-outline"}
+            title={"Story Discovery Engine"}
+            descritption={
+              "Struggling to find the right angle? Our AI asks the  right questions to uncover your most compelling stories for each prompt."
+            }
+            style={"bg-[#FC9550]"}
+          />
+          <FeatureCard
+            icon={"healthicons:i-note-action-outline"}
+            title={"Authentic Content Only"}
+            descritption={
+              "Struggling to find the right angle? Our AI asks the  right questions to uncover your most compelling stories for each prompt."
+            }
+            style={"bg-[#3CA7E9]"}
+          />
+          <FeatureCard
+            icon={"healthicons:i-note-action-outline"}
+            title={"Application Tracking"}
+            descritption={
+              "Struggling to find the right angle? Our AI asks the  right questions to uncover your most compelling stories for each prompt."
+            }
+            style={"bg-[#00A5BB]"}
+          />
+          <FeatureCard
+            icon={"fluent-mdl2:date-time-12"}
+            title={"Unlimited Iterations"}
+            descritption={
+              "Struggling to find the right angle? Our AI asks the  right questions to uncover your most compelling stories for each prompt."
+            }
+            style={"bg-[#FC64CE]"}
+          />
+        </div>
+  
       </section>
     </Container>
   );
