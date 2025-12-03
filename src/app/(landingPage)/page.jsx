@@ -6,6 +6,7 @@ import PrimaryBtn from "../component/LandingComponent/PrimaryBtn";
 import ProblemPoint from "../component/LandingComponent/ProblemPoint";
 import SolutionSteps from "../component/LandingComponent/SolutionSteps";
 import FeatureCard from "../component/LandingComponent/FeaturesCard";
+import ReviewScroll from "../component/LandingComponent/ReviewScroll";
 
 export default function Home() {
   return (
@@ -50,7 +51,7 @@ export default function Home() {
       {/* Describe Solutions */}
       <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
         <SectionHead
-          Status={"Problem"}
+          Status={"Solution"}
           statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
           title={" Your Stories. Your Voice. Your Success"}
           description={
@@ -98,7 +99,7 @@ export default function Home() {
         />
       </section>
 
-      {/* Describe Solutions */}
+      {/* Features */}
       <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
         <SectionHead
           Status={"Feature"}
@@ -159,6 +160,23 @@ export default function Home() {
             style={"bg-[#FC64CE]"}
           />
         </div>
+  
+      </section>
+
+      {/* Features */}
+      <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <SectionHead
+          Status={"Testimonial"}
+          statusStyle={"text-[#FFB834] border-[#FFB834] "}
+          title={"Real Students. Real Wins. Real Stories"}
+          description={
+            "Proof that genuine, voice-matched essays make a real difference."
+          }
+        />
+
+        <ReviewScroll/>
+
+        
   
       </section>
     </Container>
