@@ -1,29 +1,51 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+"use client";
 
-// Import Swiper styles
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
+import { Autoplay, Pagination } from "swiper/modules";
+import { Rating } from "@smastrom/react-rating";
 
 export default function ReviewScroll() {
   return (
-    <Swiper
-      slidesPerView={3}
-      spaceBetween={30}
-      pagination={{
-        clickable: true,
-      }}
-      className="mySwiper"
-    >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-      <SwiperSlide>Slide 5</SwiperSlide>
-      <SwiperSlide>Slide 6</SwiperSlide>
-      <SwiperSlide>Slide 7</SwiperSlide>
-      <SwiperSlide>Slide 8</SwiperSlide>
-      <SwiperSlide>Slide 9</SwiperSlide>
-    </Swiper>
+    <div className="w-full overflow-hidden">
+      <div className="max-w-full mx-auto">
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={20}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          modules={[Autoplay]}
+          className="w-full"
+        >
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">
+              
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 2</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 3</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 4</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 5</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 6</div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="bg-red-200 h-20">Slide 7</div>
+          </SwiperSlide>
+        </Swiper>
+      </div>
+    </div>
   );
 }

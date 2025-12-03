@@ -7,6 +7,7 @@ import ProblemPoint from "../component/LandingComponent/ProblemPoint";
 import SolutionSteps from "../component/LandingComponent/SolutionSteps";
 import FeatureCard from "../component/LandingComponent/FeaturesCard";
 import ReviewScroll from "../component/LandingComponent/ReviewScroll";
+import { Rating } from "@smastrom/react-rating";
 
 export default function Home() {
   return (
@@ -175,6 +176,12 @@ export default function Home() {
         />
 
         <ReviewScroll/>
+
+        <div className="w-full bg-amber-400">
+          <div>
+            <Rating style={{ maxWidth: 20 }} value={3} readOnly />
+          </div>
+        </div>
 
         
   
