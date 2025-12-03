@@ -1,13 +1,20 @@
 "use client";
 
-import HeaderBG from "../component/LandingComponent/HeaderBG";
-import Title from "../component/LandingComponent/Title";
+import Container from "../component/LandingComponent/Container";
+import SectionHead from "../component/LandingComponent/SectionHead";
+
 
 export default function Home() {
   return (
-    <div className="pt-20 pb-14 inline-flex justify-center">
-      <Title title={"Trusted by thousands of students"}/>
-            
-    </div>
+    <Container>
+      <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <SectionHead 
+        Status={"Problem"}
+        statusStyle={"text-[#0D8E55] border-[#0D8E55]"}
+        title={"Scholarship Essays Shouldn't Feel Impossible"}
+        description={"Create authentic essays using your voice-matched AI."}/>
+        <div className="w-full border"> 2 </div>
+      </section>
+    </Container>
   );
 }
