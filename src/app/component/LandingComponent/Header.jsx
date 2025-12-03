@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import Title from "./Title";
 import PrimaryBtn from "./PrimaryBtn";
 import SecoundryBtn from "./SecoundryBtn";
+import Image from "next/image";
 
 export default function Header() {
   const Pathname = usePathname();
@@ -31,10 +32,27 @@ export default function Header() {
                 story, told powerfully
               </p>
               <div className="pt-10 flex gap-4 justify-center w-full">
-                <PrimaryBtn title={"Start Free Trial"} icon={"line-md:arrow-right"} style={"rounded-full"}/>
-                <SecoundryBtn title={"How to Work"} icon={"line-md:arrow-right"} style={"rounded-full"}/>
+                <PrimaryBtn
+                  title={"Start Free Trial"}
+                  icon={"line-md:arrow-right"}
+                  style={"rounded-full"}
+                />
+                <SecoundryBtn
+                  title={"How to Work"}
+                  icon={"line-md:arrow-right"}
+                  style={"rounded-full"}
+                />
               </div>
             </div>
+          </div>
+          <div className="w-full h-[483px] bg-[#FFCA42] rounded-t-2xl">
+            <Image
+              className="w-full h-full object-cover object-top px-2 pt-2 rounded-t-2xl"
+              src={"/Dashboard.png"}
+              width={1000}
+              height={330}
+              alt="My Scholar Hack Dashboard"
+            />
           </div>
         </Container>
       </HeaderBG>
