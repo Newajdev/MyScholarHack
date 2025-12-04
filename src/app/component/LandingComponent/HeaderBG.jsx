@@ -11,7 +11,7 @@ export default function HeaderBG({Height, children}) {
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      className={`w-full ${pathName === "/" ? "h-[1152px]" : pathName === "/about" ? "h-[722px]":"h-[519px]"}`}
+      className={`w-full ${pathName === "/" ? "h-[1152px]" : pathName === "/about" ? "h-[765px]":"h-[565px]"}`}
     >
         {children}
     </section>
