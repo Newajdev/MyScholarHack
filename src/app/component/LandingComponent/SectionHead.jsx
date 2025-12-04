@@ -3,7 +3,7 @@ import StatusBtn from "../LandingComponent/statusBtn";
 
 export default function SectionHead({title, description, Status, statusStyle}) {
   return (
-    <div className="w-[712] text-center">
+    <div className="w-[712] text-center ">
       <div className="w-full flex justify-center">
         <StatusBtn
           style={statusStyle}
