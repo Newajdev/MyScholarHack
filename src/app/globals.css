@@ -1,1 +1,7 @@
 @import "tailwindcss";
+
+.pricingBg {
+  background-image: url('/backgroundImage.png');
+  background-size: cover;
+  background-position: center;
+}

@@ -13,9 +13,10 @@ export default function SectionHead({title, description, Status, statusStyle}) {
       <h1 className="text-5xl font-semibold text-center px-12 leading-[120%] my-2">
         {title}
       </h1>
-      <p className="text-xl text-[#666666]">
+      <p className="text-xl text-[#666666] px-12">
         {description}
       </p>
+      
     </div>
   );
 }

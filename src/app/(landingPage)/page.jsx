@@ -7,11 +7,14 @@ import ProblemPoint from "../component/LandingComponent/ProblemPoint";
 import SolutionSteps from "../component/LandingComponent/SolutionSteps";
 import FeatureCard from "../component/LandingComponent/FeaturesCard";
 import ReviewScroll from "../component/LandingComponent/ReviewScroll";
+import PricingSection from "../component/LandingComponent/pricings/PricingSection";
 
 
 
 export default function Home() {
   return (
+    <>
+    
     <Container>
       {/* Describe Problem */}
       <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
@@ -180,5 +183,9 @@ export default function Home() {
         
       </section>
     </Container>
+
+    {/* Pricing */}
+        <PricingSection/>
+    </>
   );
 }
