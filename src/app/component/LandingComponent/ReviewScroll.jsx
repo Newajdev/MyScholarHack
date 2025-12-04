@@ -3,8 +3,10 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Autoplay, Pagination } from "swiper/modules";
+import { Autoplay} from "swiper/modules";
 import { Rating } from "@smastrom/react-rating";
+import "@smastrom/react-rating/style.css";
+import ReviewCard from "./ReviewCard";
 
 export default function ReviewScroll() {
   return (
@@ -22,28 +24,21 @@ export default function ReviewScroll() {
           className="w-full"
         >
           <SwiperSlide>
-            <div className="bg-red-200 h-20">
-              
-            </div>
+            <ReviewCard star={5} message={"I was so worried about AI detection tools, but MyScholarHack  helped me write essays that were 100% me. I won $8,000 in scholarships my first  semester using it!"} username={"Sarah M"} address={"Freshman, UCLA"} profileImage={'/ReviewUser.png'} />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 2</div>
+            <ReviewCard star={5} message={"I was so worried about AI detection tools, but MyScholarHack  helped me write essays that were 100% me. I won $8,000 in scholarships my first  semester using it!"} username={"Sarah M"} address={"Freshman, UCLA"} profileImage={'/ReviewUser.png'} />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 3</div>
+            <ReviewCard star={5} message={"I was so worried about AI detection tools, but MyScholarHack  helped me write essays that were 100% me. I won $8,000 in scholarships my first  semester using it!"} username={"Sarah M"} address={"Freshman, UCLA"} profileImage={'/ReviewUser.png'} />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 4</div>
+            <ReviewCard star={5} message={"I was so worried about AI detection tools, but MyScholarHack  helped me write essays that were 100% me. I won $8,000 in scholarships my first  semester using it!"} username={"Sarah M"} address={"Freshman, UCLA"} profileImage={'/ReviewUser.png'} />
           </SwiperSlide>
           <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 5</div>
+            <ReviewCard star={5} message={"I was so worried about AI detection tools, but MyScholarHack  helped me write essays that were 100% me. I won $8,000 in scholarships my first  semester using it!"} username={"Sarah M"} address={"Freshman, UCLA"} profileImage={'/ReviewUser.png'} />
           </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 6</div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="bg-red-200 h-20">Slide 7</div>
-          </SwiperSlide>
+          
         </Swiper>
       </div>
     </div>
