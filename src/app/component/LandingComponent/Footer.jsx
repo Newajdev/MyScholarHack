@@ -24,7 +24,10 @@ export default function Footer() {
     "2115 Ash Dr. San Jose,South Dakota 2584714",
   ];
 
-  if (!Pathname.startsWith("/authentication")) {
+  if (
+    !Pathname.startsWith("/authentication") &&
+    !Pathname.startsWith("/dashboard")
+  ) {
     return (
       <div className="bg-[#1A1A1A] pb-16 pt-32">
         <Container>
@@ -61,9 +64,7 @@ export default function Footer() {
             </div>
             <div className="flex justify-end">
               <div className="">
-                <p className="text-[#FFFFFF] text-2xl font-semibold">
-                  Company
-                </p>
+                <p className="text-[#FFFFFF] text-2xl font-semibold">Company</p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {company.map((item, idx) => (
                     <li key={idx} className="">
@@ -75,14 +76,10 @@ export default function Footer() {
             </div>
             <div className="flex justify-end">
               <div className="w-[211px]">
-                <p className="text-[#FFFFFF] text-2xl font-semibold">
-                  Contact
-                </p>
+                <p className="text-[#FFFFFF] text-2xl font-semibold">Contact</p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {contacts.map((item, idx) => (
-                    <li key={idx} >
-                      {item}
-                    </li>
+                    <li key={idx}>{item}</li>
                   ))}
                 </ul>
               </div>

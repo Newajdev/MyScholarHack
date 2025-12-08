@@ -1,6 +1,5 @@
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import Container from "./component/LandingComponent/Container";
 import Header from "./component/LandingComponent/Header";
 import Footer from "./component/LandingComponent/Footer";
 

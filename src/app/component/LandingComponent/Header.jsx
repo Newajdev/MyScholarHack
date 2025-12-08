@@ -11,7 +11,10 @@ import Image from "next/image";
 export default function Header() {
   const Pathname = usePathname();
 
-  if (!Pathname.startsWith("/authentication")) {
+  if (
+    !Pathname.startsWith("/authentication") &&
+    !Pathname.startsWith("/dashboard")
+  ) {
     return (
       <HeaderBG Height={"h-[1152px]"}>
         <Container>
@@ -94,10 +97,16 @@ export default function Header() {
                     <Title title={"Feature"} />
                   </div>
                   <h1 className="font-semibold text-[64px] text-white text-center py-4">
-                    The Only Scholarship Essay Tool Built on Your Authentic Voice
+                    The Only Scholarship Essay Tool Built on Your Authentic
+                    Voice
                   </h1>
                   <p className="mx-auto text-center text-white/70 text-xl">
-                    Most AI essay tools treat you like everyone else. They generate generic content  that sounds robotic and gets flagged by AI detectors. MyScholarHack is different —we learn who YOU are, how YOU write, and what makes YOUR story unique.  Then we help you tell that story in a way that wins scholarships
+                    Most AI essay tools treat you like everyone else. They
+                    generate generic content that sounds robotic and gets
+                    flagged by AI detectors. MyScholarHack is different —we
+                    learn who YOU are, how YOU write, and what makes YOUR story
+                    unique. Then we help you tell that story in a way that wins
+                    scholarships
                   </p>
                 </div>
               </div>
@@ -111,10 +120,11 @@ export default function Header() {
                     <Title title={"Pricing"} />
                   </div>
                   <h1 className="font-semibold text-[64px] text-white text-center py-4">
-                     Affordable Plans That Pay for Themselves
+                    Affordable Plans That Pay for Themselves
                   </h1>
                   <p className="mx-auto text-center text-white/70 text-xl">
-                     One scholarship win covers months of MyScholarHack. Invest in your future
+                    One scholarship win covers months of MyScholarHack. Invest
+                    in your future
                   </p>
                 </div>
               </div>
@@ -128,10 +138,12 @@ export default function Header() {
                     <Title title={"How to Work"} />
                   </div>
                   <h1 className="font-semibold text-[64px] text-white text-center py-4">
-                     From Blank Page to Winning Essay in 4 Simple Steps
+                    From Blank Page to Winning Essay in 4 Simple Steps
                   </h1>
                   <p className="mx-auto text-center text-white/70 text-xl">
-                     MyScholarHack guides you through the entire scholarship essay process. No more  staring at blank screens or wondering what to write. Here's exactly how it works
+                    MyScholarHack guides you through the entire scholarship
+                    essay process. No more staring at blank screens or wondering
+                    what to write. Here's exactly how it works
                   </p>
                 </div>
               </div>
@@ -145,10 +157,12 @@ export default function Header() {
                     <Title title={"How to Work"} />
                   </div>
                   <h1 className="font-semibold text-[64px] text-white text-center py-4">
-                     From Blank Page to Winning Essay in 4 Simple Steps
+                    From Blank Page to Winning Essay in 4 Simple Steps
                   </h1>
                   <p className="mx-auto text-center text-white/70 text-xl">
-                     MyScholarHack guides you through the entire scholarship essay process. No more  staring at blank screens or wondering what to write. Here's exactly how it works
+                    MyScholarHack guides you through the entire scholarship
+                    essay process. No more staring at blank screens or wondering
+                    what to write. Here's exactly how it works
                   </p>
                 </div>
               </div>
