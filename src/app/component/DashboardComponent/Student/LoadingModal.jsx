@@ -9,7 +9,6 @@ export default function LoadingModal({ isOpen, progress, onClose }) {
             {/* Backdrop with blur effect */}
             <div
                 className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity duration-300"
-                onClick={onClose}
             ></div>
 
             {/* Modal Content */}

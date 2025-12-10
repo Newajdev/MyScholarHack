@@ -37,7 +37,7 @@ export default function DashboardLayout({ children }) {
         </div>
 
         {/* Scrollable Main Content */}
-        <main className="flex-1 overflow-auto mt-[64px] pt-4">
+        <main className="flex-1 overflow-auto mt-16 pt-4">
           {children}
         </main>
       </div>

@@ -6,6 +6,7 @@ import EssayResultModal from "@/app/component/DashboardComponent/Student/EssayRe
 import FileUploadList from "@/app/component/DashboardComponent/Student/FileUploadList";
 import RecordingIndicator from "@/app/component/DashboardComponent/Student/RecordingIndicator";
 import AudioPlayer from "@/app/component/DashboardComponent/Student/AudioPlayer";
+import { useRouter } from "next/navigation";
 
 export default function Essays() {
     const [essayPrompt, setEssayPrompt] = useState("");
@@ -18,6 +19,7 @@ export default function Essays() {
     const [loadingProgress, setLoadingProgress] = useState(0);
     const [showEssayModal, setShowEssayModal] = useState(false);
     const [generatedEssay, setGeneratedEssay] = useState("");
+    const navigation = useRouter()
 
     const fileInputRef = useRef(null);
     const mediaRecorderRef = useRef(null);
@@ -175,10 +177,7 @@ We must act now to preserve our environment for future generations. Every small 
     };
 
     const closeLoadingModal = () => {
-        if (progressIntervalRef.current) {
-            clearInterval(progressIntervalRef.current);
-        }
-        setShowLoadingModal(false);
+               setShowLoadingModal(false);
         setLoadingProgress(0);
     };
 
@@ -187,15 +186,12 @@ We must act now to preserve our environment for future generations. Every small 
     };
 
     const handleSaveEssay = () => {
-        // Implement save functionality
-        alert("Essay saved successfully!");
+        navigation.push('/dashboard/student/view_essay')
         closeEssayModal();
     };
 
     const handleEditEssay = () => {
-        // Implement edit functionality
-        alert("Opening editor...");
-        // You can navigate to edit page or open editor modal
+        navigation.push('/dashboard/student/essays/edit_essay')
     };
 
     const handleRemoveEssay = () => {
@@ -208,7 +204,7 @@ We must act now to preserve our environment for future generations. Every small 
     };
 
     return (
-        <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
+        <div className="min-h-screen bg-white flex items-center justify-center px-6">
             <div className="w-full max-w-[600px]">
                 <div className="text-center mb-6">
                     <h1 className="text-[44px] font-bold text-[#2D3748] mb-2">

@@ -214,7 +214,7 @@ export default function AllScholarship() {
                 <span>Write Essay</span>
               </button>
               <button
-                onClick={() => router.push('/dashboard/student/view_essay')}
+                onClick={() => router.push(`/dashboard/student/view_essay?subject=${encodeURIComponent(selectedScholarship.subject)}`)}
                 className="flex-1 bg-white border-2 border-[#FFCA42] text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-amber-50 flex items-center justify-center gap-2"
               >
                 <Icon icon="mdi:file-document-outline" width={20} height={20} />
