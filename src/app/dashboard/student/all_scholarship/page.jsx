@@ -207,14 +207,64 @@ export default function AllScholarship() {
 
             <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row gap-3">
               <button
-                onClick={() => router.push('/dashboard/student/essays')}
+                onClick={() => {
+                  // Track application start
+                  const currentData = JSON.parse(localStorage.getItem("application_tracker_data") || "[]");
+                  // Check if already exists to avoid dupes or overwrites if unintended, 
+                  // but for this flow we update/overwrite to set active
+                  const existingIndex = currentData.findIndex(item => item.id === selectedScholarship.id);
+                  const newEntry = {
+                    id: selectedScholarship.id,
+                    title: selectedScholarship.title,
+                    essayTitle: "Pending Selection...",
+                    essayContent: "",
+                    amount: selectedScholarship.amount,
+                    deadline: selectedScholarship.deadline,
+                    status: "Processing"
+                  };
+
+                  if (existingIndex >= 0) {
+                    currentData[existingIndex] = { ...currentData[existingIndex], status: "Processing" }; // Update status if re-applying? Or keep existing. Let's just update active.
+                  } else {
+                    currentData.push(newEntry);
+                  }
+
+                  localStorage.setItem("application_tracker_data", JSON.stringify(currentData));
+                  localStorage.setItem("current_active_scholarship", selectedScholarship.id);
+
+                  router.push('/dashboard/student/essays');
+                }}
                 className="flex-1 bg-linear-to-r from-[#FFCA42] to-[#FFB834] hover:from-[#FFB834] hover:to-[#FFCA42] text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
                 <Icon icon="mdi:pencil" width={20} height={20} />
                 <span>Write Essay</span>
               </button>
               <button
-                onClick={() => router.push(`/dashboard/student/view_essay?subject=${encodeURIComponent(selectedScholarship.subject)}`)}
+                onClick={() => {
+                  // Track application start
+                  const currentData = JSON.parse(localStorage.getItem("application_tracker_data") || "[]");
+                  const existingIndex = currentData.findIndex(item => item.id === selectedScholarship.id);
+                  const newEntry = {
+                    id: selectedScholarship.id,
+                    title: selectedScholarship.title,
+                    essayTitle: "Pending Selection...",
+                    essayContent: "",
+                    amount: selectedScholarship.amount,
+                    deadline: selectedScholarship.deadline,
+                    status: "Processing"
+                  };
+
+                  if (existingIndex >= 0) {
+                    // Keep existing entry but set as active
+                  } else {
+                    currentData.push(newEntry);
+                  }
+
+                  localStorage.setItem("application_tracker_data", JSON.stringify(currentData));
+                  localStorage.setItem("current_active_scholarship", selectedScholarship.id);
+
+                  router.push(`/dashboard/student/view_essay?subject=${encodeURIComponent(selectedScholarship.subject)}`);
+                }}
                 className="flex-1 bg-white border-2 border-[#FFCA42] text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 hover:bg-amber-50 flex items-center justify-center gap-2"
               >
                 <Icon icon="mdi:file-document-outline" width={20} height={20} />

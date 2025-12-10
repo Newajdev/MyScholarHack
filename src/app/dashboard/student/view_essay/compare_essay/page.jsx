@@ -164,9 +164,26 @@ function CompareContent() {
     }
 
     const handleSelect = (essay) => {
-        // In a real app, this would save the selection to DB
-        alert(`You have selected: ${essay.title}`);
-        router.push('/dashboard/student/view_essay'); // Navigate back
+        // Update Application Tracker if active
+        const activeId = localStorage.getItem("current_active_scholarship");
+        if (activeId) {
+            const currentData = JSON.parse(localStorage.getItem("application_tracker_data") || "[]");
+            const appIndex = currentData.findIndex(item => item.id === activeId);
+
+            if (appIndex >= 0) {
+                currentData[appIndex] = {
+                    ...currentData[appIndex],
+                    status: "Done",
+                    essayTitle: essay.title,
+                    essayContent: essay.content
+                };
+                localStorage.setItem("application_tracker_data", JSON.stringify(currentData));
+                localStorage.removeItem("current_active_scholarship");
+            }
+        }
+
+        // Navigate to Application Tracker instead of View Essay to show success
+        router.push('/dashboard/student/application_tracker');
     };
 
     const isOriginalWinner = originalAnalysis?.totalScore >= targetAnalysis?.totalScore;

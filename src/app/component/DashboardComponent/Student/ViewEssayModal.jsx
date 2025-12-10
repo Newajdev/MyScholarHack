@@ -1,6 +1,6 @@
 import { Icon } from "@iconify/react";
 
-export default function ViewEssayModal({ isOpen, onClose, essay, onCompare }) {
+export default function ViewEssayModal({ isOpen, onClose, essay, onCompare, onSelect }) {
     if (!isOpen || !essay) return null;
 
     return (
@@ -46,6 +46,13 @@ export default function ViewEssayModal({ isOpen, onClose, essay, onCompare }) {
                         className="px-5 py-2.5 text-sm font-medium text-[#6D6E73] hover:bg-[#F0F0F2] rounded-lg transition-colors"
                     >
                         Close
+                    </button>
+                    <button
+                        onClick={() => onSelect(essay)}
+                        className="flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-[#0C0C0D] bg-white border border-[#FFCA42] hover:bg-[#FFF9E5] rounded-lg transition-all"
+                    >
+                        <Icon icon="lucide:check" width="18" height="18" />
+                        Select This Essay
                     </button>
                     <button
                         onClick={onCompare}

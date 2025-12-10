@@ -107,6 +107,29 @@ function ViewEssayContent() {
     router.push(`/dashboard/student/view_essay/compare_essay?original=${selectedEssay.id}&target=${targetEssay.id}`);
   };
 
+  const handleSelectEssay = (essay) => {
+    // Update Application Tracker if active
+    const activeId = localStorage.getItem("current_active_scholarship");
+    if (activeId) {
+      const currentData = JSON.parse(localStorage.getItem("application_tracker_data") || "[]");
+      const appIndex = currentData.findIndex(item => item.id === activeId);
+
+      if (appIndex >= 0) {
+        currentData[appIndex] = {
+          ...currentData[appIndex],
+          status: "Done",
+          essayTitle: essay.title,
+          essayContent: essay.content
+        };
+        localStorage.setItem("application_tracker_data", JSON.stringify(currentData));
+        localStorage.removeItem("current_active_scholarship");
+      }
+    }
+
+    // Redirect to Application Tracker
+    router.push('/dashboard/student/application_tracker');
+  };
+
   const TableHeads = [
     { Title: "ID", key: "id", width: "10%" },
     { Title: "Essay Title", key: "title", width: "40%" },
@@ -190,6 +213,7 @@ function ViewEssayContent() {
         onClose={() => setIsViewModalOpen(false)}
         essay={selectedEssay}
         onCompare={handleCompareClick}
+        onSelect={handleSelectEssay}
       />
 
       <CompareSelectionModal

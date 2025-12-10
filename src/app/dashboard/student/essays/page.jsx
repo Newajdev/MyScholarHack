@@ -177,7 +177,7 @@ We must act now to preserve our environment for future generations. Every small 
     };
 
     const closeLoadingModal = () => {
-               setShowLoadingModal(false);
+        setShowLoadingModal(false);
         setLoadingProgress(0);
     };
 
@@ -186,6 +186,29 @@ We must act now to preserve our environment for future generations. Every small 
     };
 
     const handleSaveEssay = () => {
+        // Update Application Tracker if active
+        const activeId = localStorage.getItem("current_active_scholarship");
+        if (activeId) {
+            const currentData = JSON.parse(localStorage.getItem("application_tracker_data") || "[]");
+            const appIndex = currentData.findIndex(item => item.id === activeId);
+
+            if (appIndex >= 0) {
+                // Extract title from content (first line usually) or use default
+                const titleLine = generatedEssay.split('\n')[0].replace(/^#\s*/, '').trim();
+                const essayTitle = titleLine || "Generated Essay";
+
+                currentData[appIndex] = {
+                    ...currentData[appIndex],
+                    status: "Done",
+                    essayTitle: essayTitle,
+                    essayContent: generatedEssay
+                };
+                localStorage.setItem("application_tracker_data", JSON.stringify(currentData));
+                // Optional: clear active scholarship or keep it
+                localStorage.removeItem("current_active_scholarship");
+            }
+        }
+
         navigation.push('/dashboard/student/view_essay')
         closeEssayModal();
     };

@@ -1,5 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
+import Table from "@/app/component/DashboardComponent/Table";
+import InvoiceModal from "@/app/component/DashboardComponent/Student/InvoiceModal";
+import { useState } from "react";
 
 export default function SubscriptionsPlan() {
     // Mock data - replace with actual data from your backend
@@ -35,6 +38,42 @@ export default function SubscriptionsPlan() {
         }
     ];
 
+    const [selectedInvoice, setSelectedInvoice] = useState(null);
+
+
+
+    const TableHeads = [
+        { Title: "Subscription Plan", key: "plan", width: "25%" },
+        { Title: "Start", key: "start", width: "20%" },
+        { Title: "End", key: "end", width: "20%" },
+        {
+            Title: "Status",
+            key: "status",
+            width: "15%",
+            render: (row) => (
+                <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${row.status === 'Active'
+                    ? 'bg-green-100 text-green-700'
+                    : 'bg-red-100 text-red-700'
+                    }`}>
+                    {row.status}
+                </span>
+            )
+        },
+        {
+            Title: "Invoice",
+            key: "invoice",
+            width: "20%",
+            render: (row) => (
+                <button
+                    onClick={() => setSelectedInvoice(row)}
+                    className="px-4 py-1.5 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors"
+                >
+                    View
+                </button>
+            )
+        }
+    ];
+
     return (
         <div className="p-4 sm:p-6 lg:p-8 bg-white min-h-screen">
             {/* Page Header */}
@@ -48,16 +87,16 @@ export default function SubscriptionsPlan() {
             </div>
 
             {/* Section 1: Your Plan */}
-            <div className="mb-12">
+            <div className="mb-12 w-[760px] mx-auto">
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">Your Plan</h2>
 
                 {/* Plan Card */}
-                <div className="relative bg-white border-2 border-[#F6C844] rounded-2xl p-6 shadow-sm mb-6">
+                <div className="relative  bg-white border-2 border-[#F6C844] rounded-2xl p-6 shadow-sm mb-6">
                     {/* Active Badge */}
-                    <div className="absolute top-6 right-6">
-                        <span className="bg-[#F6C844] text-gray-900 text-xs font-semibold px-4 py-1.5 rounded-full">
+                    <div className="absolute top-0 right-6">
+                        <p className="bg-[#F6C844] text-gray-900 text-xl font-semibold px-4 py-2 rounded-b-xl">
                             Active Plan
-                        </span>
+                        </p>
                     </div>
 
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pr-0 lg:pr-24">
@@ -90,7 +129,7 @@ export default function SubscriptionsPlan() {
                                             icon="mdi:check-circle"
                                             width={20}
                                             height={20}
-                                            className="text-[#F6C844] mt-0.5 flex-shrink-0"
+                                            className="text-[#F6C844] mt-0.5 shrink-0"
                                         />
                                         <span className="text-gray-700 text-sm">{feature}</span>
                                     </li>
@@ -116,58 +155,16 @@ export default function SubscriptionsPlan() {
                 <h2 className="text-xl font-semibold text-gray-900 mb-4">Previous Plan</h2>
 
                 {/* Table Container */}
-                <div className="bg-amber-50 border border-amber-100 rounded-2xl overflow-hidden">
-                    <div className="overflow-x-auto">
-                        <table className="w-full">
-                            <thead>
-                                <tr className="border-b border-amber-200">
-                                    <th className="text-left px-6 py-4 text-gray-700 font-semibold text-sm">
-                                        Subscription Plan
-                                    </th>
-                                    <th className="text-left px-6 py-4 text-gray-700 font-semibold text-sm">
-                                        Start
-                                    </th>
-                                    <th className="text-left px-6 py-4 text-gray-700 font-semibold text-sm">
-                                        End
-                                    </th>
-                                    <th className="text-left px-6 py-4 text-gray-700 font-semibold text-sm">
-                                        Status
-                                    </th>
-                                    <th className="text-left px-6 py-4 text-gray-700 font-semibold text-sm">
-                                        Invoice
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {previousPlans.map((plan) => (
-                                    <tr key={plan.id} className="border-b border-amber-100 last:border-b-0">
-                                        <td className="px-6 py-4 text-gray-900 font-medium">
-                                            {plan.plan}
-                                        </td>
-                                        <td className="px-6 py-4 text-gray-700">
-                                            {plan.start}
-                                        </td>
-                                        <td className="px-6 py-4 text-gray-700">
-                                            {plan.end}
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${plan.status === 'Active'
-                                                    ? 'bg-green-100 text-green-700'
-                                                    : 'bg-red-100 text-red-700'
-                                                }`}>
-                                                {plan.status}
-                                            </span>
-                                        </td>
-                                        <td className="px-6 py-4">
-                                            <button className="px-4 py-1.5 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg text-sm font-medium transition-colors">
-                                                View
-                                            </button>
-                                        </td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </table>
+                <div className="mt-4">
+                    <div className="mt-4">
+                        <Table TableHeads={TableHeads} TableRows={previousPlans} />
                     </div>
+
+                    <InvoiceModal
+                        isOpen={!!selectedInvoice}
+                        onClose={() => setSelectedInvoice(null)}
+                        data={selectedInvoice}
+                    />
                 </div>
             </div>
         </div>
