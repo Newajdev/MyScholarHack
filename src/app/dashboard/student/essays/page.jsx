@@ -1,6 +1,11 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { useState, useRef, useEffect } from "react";
+import LoadingModal from "@/app/component/DashboardComponent/Student/LoadingModal";
+import EssayResultModal from "@/app/component/DashboardComponent/Student/EssayResultModal";
+import FileUploadList from "@/app/component/DashboardComponent/Student/FileUploadList";
+import RecordingIndicator from "@/app/component/DashboardComponent/Student/RecordingIndicator";
+import AudioPlayer from "@/app/component/DashboardComponent/Student/AudioPlayer";
 
 export default function Essays() {
     const [essayPrompt, setEssayPrompt] = useState("");
@@ -9,19 +14,25 @@ export default function Essays() {
     const [isPaused, setIsPaused] = useState(false);
     const [recordingTime, setRecordingTime] = useState(0);
     const [audioURL, setAudioURL] = useState(null);
-    const [isPlaying, setIsPlaying] = useState(false);
+    const [showLoadingModal, setShowLoadingModal] = useState(false);
+    const [loadingProgress, setLoadingProgress] = useState(0);
+    const [showEssayModal, setShowEssayModal] = useState(false);
+    const [generatedEssay, setGeneratedEssay] = useState("");
 
     const fileInputRef = useRef(null);
     const mediaRecorderRef = useRef(null);
     const audioChunksRef = useRef([]);
     const recordingIntervalRef = useRef(null);
-    const audioRef = useRef(null);
     const streamRef = useRef(null);
+    const progressIntervalRef = useRef(null);
 
     useEffect(() => {
         return () => {
             if (recordingIntervalRef.current) {
                 clearInterval(recordingIntervalRef.current);
+            }
+            if (progressIntervalRef.current) {
+                clearInterval(progressIntervalRef.current);
             }
             if (streamRef.current) {
                 streamRef.current.getTracks().forEach(track => track.stop());
@@ -115,31 +126,90 @@ export default function Essays() {
         }
         setAudioURL(null);
         setRecordingTime(0);
-        setIsPlaying(false);
     };
 
-    const togglePlayAudio = () => {
-        if (!audioRef.current) return;
+    const handleGenerateEssay = async () => {
+        // Show loading modal and start progress animation
+        setShowLoadingModal(true);
+        setLoadingProgress(0);
 
-        if (isPlaying) {
-            audioRef.current.pause();
-            setIsPlaying(false);
-        } else {
-            audioRef.current.play();
-            setIsPlaying(true);
+        // Simulate essay generation with progress
+        progressIntervalRef.current = setInterval(() => {
+            setLoadingProgress(prev => {
+                if (prev >= 100) {
+                    clearInterval(progressIntervalRef.current);
+                    return 100;
+                }
+                // Increase progress by random increments
+                return Math.min(prev + Math.random() * 15, 100);
+            });
+        }, 300);
+
+        // Simulate API call (replace with actual API call)
+        setTimeout(() => {
+            clearInterval(progressIntervalRef.current);
+            setLoadingProgress(100);
+
+            // Wait a bit to show 100% before opening result modal
+            setTimeout(() => {
+                // Generate demo essay content
+                const demoEssay = `# The Importance of Environmental Conservation
+
+In today's rapidly changing world, environmental conservation has become more crucial than ever. Climate change, deforestation, and pollution pose significant threats to our planet's future.
+
+## Key Points
+
+1. **Climate Action**: Reducing carbon emissions is essential for a sustainable future.
+2. **Biodiversity**: Protecting ecosystems ensures the survival of countless species.
+3. **Sustainable Practices**: Implementing eco-friendly solutions in daily life makes a difference.
+
+## Conclusion
+
+We must act now to preserve our environment for future generations. Every small action contributes to a larger impact on our planet's health and sustainability.`;
+
+                setGeneratedEssay(demoEssay);
+                setShowLoadingModal(false);
+                setShowEssayModal(true);
+            }, 500);
+        }, 5000); // 5 seconds total generation time
+    };
+
+    const closeLoadingModal = () => {
+        if (progressIntervalRef.current) {
+            clearInterval(progressIntervalRef.current);
         }
+        setShowLoadingModal(false);
+        setLoadingProgress(0);
     };
 
-    const formatTime = (seconds) => {
-        const mins = Math.floor(seconds / 60);
-        const secs = seconds % 60;
-        return `${mins}:${secs.toString().padStart(2, '0')}`;
+    const closeEssayModal = () => {
+        setShowEssayModal(false);
+    };
+
+    const handleSaveEssay = () => {
+        // Implement save functionality
+        alert("Essay saved successfully!");
+        closeEssayModal();
+    };
+
+    const handleEditEssay = () => {
+        // Implement edit functionality
+        alert("Opening editor...");
+        // You can navigate to edit page or open editor modal
+    };
+
+    const handleRemoveEssay = () => {
+        // Implement remove functionality
+        if (confirm("Are you sure you want to remove this essay?")) {
+            setGeneratedEssay("");
+            closeEssayModal();
+            alert("Essay removed successfully!");
+        }
     };
 
     return (
         <div className="min-h-screen bg-white flex items-center justify-center px-6 py-12">
             <div className="w-full max-w-[600px]">
-                {/* Header */}
                 <div className="text-center mb-6">
                     <h1 className="text-[44px] font-bold text-[#2D3748] mb-2">
                         Create a Essay
@@ -149,17 +219,15 @@ export default function Essays() {
                     </p>
                 </div>
 
-                {/* Input Box */}
                 <div className="bg-white rounded-[20px] border border-[#E2E8F0] p-8 mb-6 min-h-[200px] relative">
                     <textarea
                         value={essayPrompt}
                         onChange={(e) => setEssayPrompt(e.target.value)}
-                        placeholder="Ask anything..."
-                        className="w-full h-[120px] resize-none focus:outline-none text-[#4A5568] placeholder-[#A0AEC0] text-[15px] bg-transparent"
+                        placeholder="Write anything..."
+                        className="w-full h-[100px] resize-none focus:outline-none text-[#4A5568] placeholder-[#A0AEC0] text-[15px] bg-transparent"
                     />
 
-                    {/* Icons at bottom right - always visible */}
-                    <div className="absolute bottom-8 right-8 flex items-center gap-2">
+                    <div className="absolute bottom-4 right-8 flex items-center gap-2">
                         <input
                             ref={fileInputRef}
                             type="file"
@@ -191,97 +259,43 @@ export default function Essays() {
                     </div>
                 </div>
 
-                {/* Uploaded Files - Show below input if present */}
-                {uploadedFiles.length > 0 && (
-                    <div className="mb-6 space-y-2">
-                        <p className="text-sm font-medium text-gray-700 mb-2">Uploaded Files:</p>
-                        {uploadedFiles.map((file, index) => (
-                            <div key={index} className="flex items-center gap-3 bg-gray-50 border border-gray-200 px-4 py-3 rounded-lg">
-                                <Icon
-                                    icon={file.type === 'application/pdf' ? 'mdi:file-pdf-box' : 'mdi:image'}
-                                    width={24}
-                                    height={24}
-                                    className={file.type === 'application/pdf' ? 'text-red-500' : 'text-blue-500'}
-                                />
-                                <span className="text-sm text-gray-700 flex-1 truncate">{file.name}</span>
-                                <button
-                                    onClick={() => removeFile(index)}
-                                    className="text-gray-400 hover:text-red-500 transition-colors"
-                                >
-                                    <Icon icon="mdi:close-circle" width={20} height={20} />
-                                </button>
-                            </div>
-                        ))}
-                    </div>
-                )}
+                <FileUploadList files={uploadedFiles} onRemove={removeFile} />
 
-                {/* Recording Controls - Show below input when recording */}
-                {isRecording && (
-                    <div className="mb-6">
-                        <div className="bg-red-50 border border-red-200 rounded-lg p-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <div className={`w-3 h-3 bg-red-500 rounded-full ${!isPaused && 'animate-pulse'}`}></div>
-                                <span className="text-sm font-semibold text-red-700">
-                                    {isPaused ? 'Paused' : 'Recording'}
-                                </span>
-                                <span className="text-sm font-mono text-red-600">{formatTime(recordingTime)}</span>
-                            </div>
+                <RecordingIndicator
+                    isRecording={isRecording}
+                    isPaused={isPaused}
+                    recordingTime={recordingTime}
+                    onTogglePause={togglePauseRecording}
+                />
 
-                            <button
-                                onClick={togglePauseRecording}
-                                className="flex items-center gap-2 px-4 py-2 bg-white text-gray-700 rounded-lg hover:bg-gray-50 transition-colors text-sm font-medium"
-                            >
-                                <Icon icon={isPaused ? "mdi:play" : "mdi:pause"} width={18} height={18} />
-                                {isPaused ? 'Resume' : 'Pause'}
-                            </button>
-                        </div>
-                    </div>
-                )}
+                <AudioPlayer
+                    audioURL={audioURL}
+                    recordingTime={recordingTime}
+                    onDelete={deleteRecording}
+                />
 
-                {/* Audio Playback - Show below input when audio exists */}
-                {audioURL && !isRecording && (
-                    <div className="mb-6">
-                        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                            <div className="flex items-center gap-3 mb-3">
-                                <Icon icon="mdi:microphone" width={20} height={20} className="text-blue-600" />
-                                <span className="text-sm font-semibold text-blue-700">Recorded Audio</span>
-                                <span className="text-sm font-mono text-blue-600">{formatTime(recordingTime)}</span>
-                            </div>
-
-                            <audio
-                                ref={audioRef}
-                                src={audioURL}
-                                onEnded={() => setIsPlaying(false)}
-                                className="hidden"
-                            />
-
-                            <div className="flex items-center gap-2">
-                                <button
-                                    onClick={togglePlayAudio}
-                                    className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
-                                >
-                                    <Icon icon={isPlaying ? "mdi:pause" : "mdi:play"} width={18} height={18} />
-                                    {isPlaying ? 'Pause' : 'Play'}
-                                </button>
-                                <button
-                                    onClick={deleteRecording}
-                                    className="flex items-center gap-2 px-4 py-2 bg-white text-red-600 border border-red-300 rounded-lg hover:bg-red-50 transition-colors text-sm font-medium"
-                                >
-                                    <Icon icon="mdi:delete" width={18} height={18} />
-                                    Delete
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* Generate Button */}
                 <button
+                    onClick={handleGenerateEssay}
                     className="w-full bg-[#F6C844] hover:bg-[#EDB91C] text-[#2D3748] font-semibold py-4 rounded-full transition-colors text-[16px]"
                 >
-                    Essay Generate
+                    Generate Essay
                 </button>
             </div>
+
+            <LoadingModal
+                isOpen={showLoadingModal}
+                progress={loadingProgress}
+                onClose={closeLoadingModal}
+            />
+
+            <EssayResultModal
+                isOpen={showEssayModal}
+                essay={generatedEssay}
+                onClose={closeEssayModal}
+                onSave={handleSaveEssay}
+                onEdit={handleEditEssay}
+                onRemove={handleRemoveEssay}
+            />
         </div>
     );
 }

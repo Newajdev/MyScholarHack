@@ -35,7 +35,6 @@ export default function AllScholarship() {
 
   return (
     <div className="p-4 sm:p-6 lg:p-8 bg-gray-50 min-h-screen">
-      {/* Header Section */}
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-semibold text-gray-900 mb-3">
           All Scholarships
@@ -49,14 +48,12 @@ export default function AllScholarship() {
         </p>
       </div>
 
-      {/* Search and Filter Section */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
         <h2 className="text-lg sm:text-xl font-semibold text-gray-900">
           Recommended Scholarships
         </h2>
 
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
-          {/* Search Bar */}
           <div className="bg-white border border-gray-200 rounded-lg py-2.5 px-4 flex items-center gap-3 shadow-sm hover:shadow-md transition-shadow">
             <Icon icon="lucide:search" width={20} height={20} className="text-gray-400" />
             <input
@@ -68,7 +65,6 @@ export default function AllScholarship() {
             />
           </div>
 
-          {/* Category Dropdown */}
           <div className="relative">
             <button
               onClick={() => setShowCategoryDropdown(!showCategoryDropdown)}
@@ -116,11 +112,9 @@ export default function AllScholarship() {
         </div>
       </div>
 
-      {/* Scholarships Grid */}
       <div className="space-y-6">
-        {/* Recommended Section */}
         {Recomended && Recomended.length > 0 && (
-          <div className="bg-gradient-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-6 shadow-sm">
+          <div className="bg-linear-to-br from-amber-50 to-yellow-50 border-2 border-amber-200 rounded-2xl p-6 shadow-sm">
             <div className="flex items-center gap-2 mb-4">
               <Icon icon="mdi:star" width={24} height={24} className="text-amber-500" />
               <h3 className="text-lg font-semibold text-gray-900">
@@ -139,7 +133,6 @@ export default function AllScholarship() {
           </div>
         )}
 
-        {/* All Scholarships Section */}
         <div className="bg-white p-6">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
             All Available Scholarships
@@ -152,11 +145,9 @@ export default function AllScholarship() {
         </div>
       </div>
 
-      {/* Scholarship Details Modal */}
       {showModal && selectedScholarship && (
         <div className="fixed inset-0 bg-white/30 backdrop-blur-md z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
-            {/* Modal Header */}
             <div className="sticky top-0 bg-white border-b border-gray-200 px-6 py-4 flex items-center justify-between rounded-t-2xl">
               <h2 className="text-2xl font-bold text-gray-900">Scholarship Details</h2>
               <button
@@ -167,9 +158,7 @@ export default function AllScholarship() {
               </button>
             </div>
 
-            {/* Modal Content */}
             <div className="p-6 space-y-6">
-              {/* Title */}
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   {selectedScholarship.title}
@@ -182,7 +171,6 @@ export default function AllScholarship() {
                 </div>
               </div>
 
-              {/* Details Grid */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <div className="flex items-center gap-2 mb-2">
@@ -209,7 +197,6 @@ export default function AllScholarship() {
                 </div>
               </div>
 
-              {/* Description (if available) */}
               {selectedScholarship.description && (
                 <div>
                   <h4 className="text-lg font-semibold text-gray-900 mb-2">Description</h4>
@@ -218,11 +205,10 @@ export default function AllScholarship() {
               )}
             </div>
 
-            {/* Modal Footer - Action Buttons */}
             <div className="sticky bottom-0 bg-gray-50 border-t border-gray-200 px-6 py-4 flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => router.push('/dashboard/student/essays')}
-                className="flex-1 bg-gradient-to-r from-[#FFCA42] to-[#FFB834] hover:from-[#FFB834] hover:to-[#FFCA42] text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
+                className="flex-1 bg-linear-to-r from-[#FFCA42] to-[#FFB834] hover:from-[#FFB834] hover:to-[#FFCA42] text-gray-900 font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2"
               >
                 <Icon icon="mdi:pencil" width={20} height={20} />
                 <span>Write Essay</span>
