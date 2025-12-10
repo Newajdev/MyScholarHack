@@ -1,4 +1,4 @@
-import Table from "@/app/component/DashboardComponent/table";
+import Table from "@/app/component/DashboardComponent/Table";
 
 export default function ViewEssay() {
     return (
