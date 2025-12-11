@@ -58,11 +58,6 @@ export const navLink_Admin = [
     icon: "ant-design:usergroup-add-outlined",
   },
   {
-    title: "Scraping Data",
-    path: "/dashboard/admin/scraping_data",
-    icon: "mdi:widget-gantt",
-  },
-  {
     title: "Make Offer",
     path: "/dashboard/admin/offer_plan",
     icon: "hugeicons:discount-tag-02",
