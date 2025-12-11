@@ -7,32 +7,32 @@ export const navLink_Student = [
   {
     title: "All Scholarship",
     path: "/dashboard/student/all_scholarship",
-    icon: "fluent:hat-graduation-12-regular"
+    icon: "fluent:hat-graduation-12-regular",
   },
   {
     title: "Essays",
     path: "/dashboard/student/essays",
-    icon: "fluent:notepad-edit-20-regular"
+    icon: "fluent:notepad-edit-20-regular",
   },
   {
     title: "View Essay",
     path: "/dashboard/student/view_essay",
-    icon: "streamline-ultimate:notes-book-text-bold"
+    icon: "streamline-ultimate:notes-book-text-bold",
   },
   {
     title: "Application Tracker",
     path: "/dashboard/student/application_tracker",
-    icon: "charm:notes-tick"
+    icon: "charm:notes-tick",
   },
   {
     title: "Subscriptions Plan",
     path: "/dashboard/student/subscriptions_plan",
-    icon: "lets-icons:dimond"
+    icon: "lets-icons:dimond",
   },
   {
     title: "Profile",
     path: "/dashboard/student/profile",
-    icon: "carbon:user-profile"
+    icon: "carbon:user-profile",
   },
 ];
 
@@ -43,38 +43,39 @@ export const navLink_Admin = [
     icon: "mage:dashboard",
   },
   {
-    title: "User Info",
-    path: "/dashboard/admin/user_info",
-    icon: "hugeicons:user"
-  },
-  {
-    title: "Subscriptions",
-    path: "/dashboard/admin/subscriptions",
-    icon: "lets-icons:dimond"
-},
-  {
-    title: "Scraping Data",
-    path: "/dashboard/admin/scraping_data",
-    icon: "mdi:widget-gantt"
-  },
-  {
-    title: "Offer Plan",
-    path: "/dashboard/admin/offer_plan",
-    icon: "hugeicons:discount-tag-02"
-  },
-  {
     title: "Analytics",
     path: "/dashboard/admin/analytics",
-    icon: "hugeicons:analytics-up"
+    icon: "hugeicons:analytics-up",
+  },
+  {
+    title: "User Info",
+    path: "/dashboard/admin/user_info",
+    icon: "hugeicons:user",
   },
   {
     title: "Add Admin",
     path: "/dashboard/admin/add_admin",
-    icon: "ant-design:usergroup-add-outlined"
+    icon: "ant-design:usergroup-add-outlined",
   },
+  {
+    title: "Scraping Data",
+    path: "/dashboard/admin/scraping_data",
+    icon: "mdi:widget-gantt",
+  },
+  {
+    title: "Make Offer",
+    path: "/dashboard/admin/offer_plan",
+    icon: "hugeicons:discount-tag-02",
+  },
+  {
+    title: "Current Plans",
+    path: "/dashboard/admin/subscriptions",
+    icon: "lets-icons:dimond",
+  },
+
   {
     title: "FAQs",
     path: "/dashboard/admin/faqs",
-    icon: "wpf:faq"
+    icon: "wpf:faq",
   },
 ];
