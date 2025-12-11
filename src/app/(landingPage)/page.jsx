@@ -16,7 +16,7 @@ export default function Home() {
     <>
       <Container>
         {/* Describe Problem */}
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Problem"}
             statusStyle={"text-[#D50000] border-[#D50000] "}
@@ -24,7 +24,7 @@ export default function Home() {
             description={"Create authentic essays using your voice-matched AI."}
           />
 
-          <div className="w-full grid grid-cols-3 gap-x-[72px] ">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-x-[72px] ">
             <ProblemPoint
               icon={"streamline-ultimate:science-molecule"}
               anim={"group-hover:animate-spin"}
@@ -53,7 +53,7 @@ export default function Home() {
         </section>
 
         {/* Describe Solutions */}
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Solution"}
             statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
@@ -104,7 +104,7 @@ export default function Home() {
         </section>
 
         {/* Features */}
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Feature"}
             statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
@@ -114,7 +114,7 @@ export default function Home() {
             }
           />
 
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <FeatureCard
               icon={"fa6-solid:microphone-lines"}
               title={"Voice Matching Technology"}
@@ -167,7 +167,7 @@ export default function Home() {
         </section>
 
         {/* Features */}
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Testimonial"}
             statusStyle={"text-[#FFB834] border-[#FFB834] "}
@@ -185,7 +185,7 @@ export default function Home() {
       <PricingSection />
 
       <Container>
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Security"}
             statusStyle={"text-[#D50000] border-[#D50000] "}
@@ -195,7 +195,7 @@ export default function Home() {
             }
           />
 
-          <div className="w-full grid grid-cols-3 gap-5 ">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 ">
             <SecurityCard
               icon={"streamline-plump:desktop-lock-remix"}
               title={"Bank-Level Security"}
@@ -220,7 +220,7 @@ export default function Home() {
           </div>
         </section>
 
-        <HeroCTA/>
+        <HeroCTA />
       </Container>
     </>
   );

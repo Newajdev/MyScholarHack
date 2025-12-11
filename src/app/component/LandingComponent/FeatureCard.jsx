@@ -14,17 +14,16 @@ export default function FeatureCard({
   return (
     <div className="max-w-6xl mx-auto p-8">
       <div
-        className={`flex ${
-          imagePosition === "left" ? "flex-row-reverse" : "flex-row"
-        } items-start gap-8 mb-16 rounded-3xl`}
+        className={`flex flex-col ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"
+          } items-start gap-8 mb-16 rounded-3xl`}
       >
-        
-        <div className="w-[382px] h-[484px] bg-linear-to-br from-gray-100 to-gray-200 rounded-lg shrink-0 relative overflow-hidden">
-          
+
+        <div className="w-full lg:w-[382px] h-[300px] lg:h-[484px] bg-linear-to-br from-gray-100 to-gray-200 rounded-lg shrink-0 relative overflow-hidden">
+
         </div>
 
-        
-        <div className="flex-1">
+
+        <div className="flex-1 w-full">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">{title}</h2>
 
           {description && (

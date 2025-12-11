@@ -38,7 +38,7 @@ const FaqSection = () => {
     };
 
     return (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 my-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 my-10 lg:my-20">
             {/* Left Column: Header */}
             <div className="lg:col-span-5">
                 <div className="flex justify-start mb-4">
@@ -59,8 +59,8 @@ const FaqSection = () => {
                     <div
                         key={index}
                         className={`border rounded-lg transition-all duration-300 overflow-hidden ${openIndex === index
-                                ? "border-yellow-400 shadow-sm bg-white"
-                                : "border-gray-100 bg-white"
+                            ? "border-yellow-400 shadow-sm bg-white"
+                            : "border-gray-100 bg-white"
                             }`}
                     >
                         <button
@@ -95,8 +95,8 @@ const FaqSection = () => {
                         </button>
                         <div
                             className={`transition-all duration-300 ease-in-out ${openIndex === index
-                                    ? "max-h-40 opacity-100"
-                                    : "max-h-0 opacity-0"
+                                ? "max-h-40 opacity-100"
+                                : "max-h-0 opacity-0"
                                 }`}
                         >
                             <div className="px-6 pb-6 text-gray-500 leading-relaxed">

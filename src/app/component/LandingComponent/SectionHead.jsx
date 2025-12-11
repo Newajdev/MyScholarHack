@@ -1,22 +1,22 @@
 
 import StatusBtn from "../LandingComponent/statusBtn";
 
-export default function SectionHead({title, description, Status, statusStyle}) {
+export default function SectionHead({ title, description, Status, statusStyle }) {
   return (
-    <div className="w-[712] text-center ">
+    <div className="w-full max-w-[712px] text-center ">
       <div className="w-full flex justify-center">
         <StatusBtn
           style={statusStyle}
           title={Status}
         />
       </div>
-      <h1 className="text-5xl font-semibold text-center px-12 leading-[120%] my-2">
+      <h1 className="text-3xl md:text-5xl font-semibold text-center px-4 md:px-12 leading-[120%] my-2">
         {title}
       </h1>
-      <p className="text-xl text-[#666666] px-12">
+      <p className="text-lg md:text-xl text-[#666666] px-4 md:px-12">
         {description}
       </p>
-      
+
     </div>
   );
 }

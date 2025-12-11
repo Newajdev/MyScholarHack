@@ -35,7 +35,7 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="flex items-center gap-14">
+          <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-14">
             <div>
               <h3 className="text-3xl font-semibold mb-2.5">
                 What Makes Us Different
@@ -73,7 +73,7 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <section className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60]">
+        <section className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status={"Teams"}
             statusStyle={"text-[#0D8E55] border-[#0D8E55] "}
@@ -83,9 +83,9 @@ export default function AboutPage() {
             }
           />
 
-          <div className="w-full grid grid-cols-2 gap-10 ">
+          <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
             <div className="border border-[#C4C4C4] rounded-2xl flex flex-col justify-center items-center p-4">
-              <div className="w-[568px] h-[478px]">
+              <div className="w-full max-w-[568px] h-auto aspect-square md:h-[478px]">
                 <Image
                   className="w-full h-full object-cover"
                   src={"/ceoProfile.png"}
@@ -109,7 +109,7 @@ export default function AboutPage() {
             </div>
 
             <div className="border border-[#C4C4C4] rounded-2xl flex flex-col justify-center items-center p-4">
-              <div className="w-[568px] h-[478px]">
+              <div className="w-full max-w-[568px] h-auto aspect-square md:h-[478px]">
                 <Image
                   className="w-full h-full object-cover"
                   src={"/ctoProtile.png"}

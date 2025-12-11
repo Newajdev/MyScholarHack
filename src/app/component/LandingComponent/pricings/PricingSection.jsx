@@ -80,14 +80,13 @@ export default function PricingSection() {
 
   return (
     <section
-      className={`w-full ${
-        !plans
+      className={`w-full ${!plans
           ? "bg-[url('/backgroundImage.png')] bg-cover bg-center text-white"
           : "bg-white text-black"
-      }`}
+        }`}
     >
       <Container>
-        <div className="pt-[120px] pb-[72px] flex flex-col items-center justify-center gap-y-[60px]">
+        <div className="pt-20 lg:pt-[120px] pb-10 lg:pb-[72px] flex flex-col items-center justify-center gap-y-10 lg:gap-y-[60px]">
           <SectionHead
             Status="Pricing"
             statusStyle="text-[#FFB834] border-[#FFB834]"
@@ -103,9 +102,8 @@ export default function PricingSection() {
             {pricingPlans.map((plan, idx) => (
               <div
                 key={idx}
-                className={`border ${
-                  plan.highlight ? "border-[#FFCA42]" : `${plans ? "border-[#31313114]" : "border-[#FFFFFF14]"}`
-                } px-4 py-6 rounded-2xl bg-[#FFFFFF05] backdrop-blur-sm`}
+                className={`border ${plan.highlight ? "border-[#FFCA42]" : `${plans ? "border-[#31313114]" : "border-[#FFFFFF14]"}`
+                  } px-4 py-6 rounded-2xl bg-[#FFFFFF05] backdrop-blur-sm`}
               >
                 <div className="flex flex-col h-full">
                   <h2 className="text-3xl font-semibold">{plan.name}</h2>
@@ -116,7 +114,7 @@ export default function PricingSection() {
                     <h4 className="text-4xl font-semibold">${!plans ? plan.Montlyprice : plan.Yearlyprice}</h4>
                     <p className="text-base opacity-70">/{!plans ? "per Month" : "per Year"}</p>
                   </div>
-                  <div className={`flex-1 space-y-5 px-4 py-5 ${plans? "bg-[#5858580a] border border-[#52525214]" : "bg-[#FFFFFF0A] border border-[#FFFFFF14]"} rounded-lg my-4`}>
+                  <div className={`flex-1 space-y-5 px-4 py-5 ${plans ? "bg-[#5858580a] border border-[#52525214]" : "bg-[#FFFFFF0A] border border-[#FFFFFF14]"} rounded-lg my-4`}>
                     {plan.features.map((feature, index) => (
                       <div key={index} className="flex gap-4">
                         <Icon

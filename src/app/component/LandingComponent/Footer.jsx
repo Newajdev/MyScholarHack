@@ -31,7 +31,7 @@ export default function Footer() {
     return (
       <div className="bg-[#1A1A1A] pb-16 pt-32">
         <Container>
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0">
             <div>
               <div className="text-white flex items-center gap-4">
                 <Image
@@ -48,9 +48,9 @@ export default function Footer() {
                 applications organized and stress-free.
               </p>
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-start lg:justify-end mt-8 lg:mt-0">
               <div className="">
-                <p className="text-[#FFFFFF] text-2xl font-semibold">
+                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">
                   Products
                 </p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
@@ -62,9 +62,9 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-end">
+            <div className="flex justify-start lg:justify-end mt-8 lg:mt-0">
               <div className="">
-                <p className="text-[#FFFFFF] text-2xl font-semibold">Company</p>
+                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">Company</p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {company.map((item, idx) => (
                     <li key={idx} className="">
@@ -74,9 +74,9 @@ export default function Footer() {
                 </ul>
               </div>
             </div>
-            <div className="flex justify-end">
-              <div className="w-[211px]">
-                <p className="text-[#FFFFFF] text-2xl font-semibold">Contact</p>
+            <div className="flex justify-start lg:justify-end mt-8 lg:mt-0">
+              <div className="w-full lg:w-[211px]">
+                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">Contact</p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {contacts.map((item, idx) => (
                     <li key={idx}>{item}</li>
@@ -85,8 +85,8 @@ export default function Footer() {
               </div>
             </div>
           </div>
-          <div className="text-white border-t-2 border-[#D9D9D9] flex items-center justify-between mt-[72px] pt-2">
-            <p>© 2025 MyScholarHack. All rights reserved.</p>
+          <div className="text-white border-t-2 border-[#D9D9D9] flex flex-col-reverse md:flex-row items-center justify-between mt-10 lg:mt-[72px] pt-4 gap-y-4">
+            <p className="text-center md:text-left">© 2025 MyScholarHack. All rights reserved.</p>
             <p>Privacy and Policy</p>
           </div>
         </Container>
