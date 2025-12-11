@@ -13,13 +13,7 @@ export default function DashboardLayout({ children }) {
         <Sidebar />
       </div>
 
-      {/* Mobile Sidebar Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
+
 
       {/* Mobile Sidebar */}
       <div
