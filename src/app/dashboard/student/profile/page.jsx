@@ -7,6 +7,7 @@ import BasicInfo from '@/components/dashboard/Student/Profile/Sections/BasicInfo
 import AcademicInterests from '@/components/dashboard/Student/Profile/Sections/AcademicInterests';
 import ExtraCurricular from '@/components/dashboard/Student/Profile/Sections/ExtraCurricular';
 import CommunityService from '@/components/dashboard/Student/Profile/Sections/CommunityService';
+import FamilyBackground from '@/components/dashboard/Student/Profile/Sections/FamilyBackground';
 import UniqueExperiences from '@/components/dashboard/Student/Profile/Sections/UniqueExperiences';
 import DiversityIdentity from '@/components/dashboard/Student/Profile/Sections/DiversityIdentity';
 import ScholarshipInfo from '@/components/dashboard/Student/Profile/Sections/ScholarshipInfo';
@@ -17,7 +18,8 @@ const TABS = [
     { id: 'basic', label: 'Basic Information', component: BasicInfo },
     { id: 'academic', label: 'Academic Interests', component: AcademicInterests },
     { id: 'extracurricular', label: 'Extra Curricular Activities', component: ExtraCurricular },
-    { id: 'community', label: 'Community Service', component: CommunityService },
+    { id: 'community', label: 'Community Service (Volunteer Work)', component: CommunityService },
+    { id: 'family', label: 'Community Service (Family Background)', component: FamilyBackground },
     { id: 'experiences', label: 'Unique Experiences', component: UniqueExperiences },
     { id: 'identity', label: 'Diversity and Identity', component: DiversityIdentity },
     { id: 'scholarship', label: 'Scholarship Specific Info', component: ScholarshipInfo },

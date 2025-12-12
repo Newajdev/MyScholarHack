@@ -38,8 +38,9 @@ export default function SectionWrapper({ title, description, children, onSave })
                 )}
             </div>
 
-            <div className={isEditing ? "" : "pointer-events-none opacity-90"}>
-                {children}
+            <div className={isEditing ? "" : "opacity-90 transition-opacity"}>
+                {/* Support both patterns: Direct children or Render Prop */}
+                {typeof children === 'function' ? children({ isEditing }) : children}
             </div>
 
             {isEditing && (
