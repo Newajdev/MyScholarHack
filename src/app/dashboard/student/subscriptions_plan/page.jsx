@@ -1,7 +1,7 @@
 "use client";
 import { Icon } from "@iconify/react";
-import Table from "@/app/component/DashboardComponent/Table";
-import InvoiceModal from "@/app/component/DashboardComponent/Student/InvoiceModal";
+import Table from "@/components/dashboard/Table";
+import InvoiceModal from "@/components/dashboard/Student/InvoiceModal";
 import { useState } from "react";
 
 export default function SubscriptionsPlan() {

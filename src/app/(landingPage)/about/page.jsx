@@ -56,7 +56,6 @@ export default function AboutPage() {
 
             <div>
               <h3 className="text-3xl font-semibold mb-2.5">
-                {" "}
                 What Makes Us Different
               </h3>
               <p className="text-xl font-normal text-[#404040]">
