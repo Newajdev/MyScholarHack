@@ -42,7 +42,7 @@ export default function Navbar() {
           <Image src={"/logo.png"} height={48} width={48} alt="MyScholarHack" />
         </Link>
         <Link href="/">
-          <h1 className="text-4xl font-semibold">MyScholarHack</h1>
+          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold">MyScholarHack</h1>
         </Link>
       </div>
 

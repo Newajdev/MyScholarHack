@@ -12,7 +12,7 @@ export default function SolutionSteps({ icon, title, descrtion, step }) {
         <div className="hidden md:block w-1 h-[61px] bg-linear-to-b from-[#FBA919]"></div>
       </div>
       <div className="w-full md:w-[90%] relative">
-        <h3 className="bg-[#FFCA42] px-9 py-1 inline-flex absolute right-7 top-1 z-10 text-sm md:text-base">
+        <h3 className="bg-[#FFCA42] px-9 py-1 inline-flex absolute right-7 -top-3 md:top-1 z-10 text-sm md:text-base">
           Step {step}
         </h3>
         <div className="border-2 border-[#FFE7A8] bg-[#F9F9F9] mt-0 md:mt-[22px] p-6 rounded-2xl group-hover:shadow-xl duration-300">

@@ -5,7 +5,7 @@ import PrimaryBtn from "./PrimaryBtn";
 
 export default function HeroCTA() {
   return (
-    <section className="w-full flex justify-center px-4 py-10">
+    <section className="w-full flex justify-center px-0 py-10">
       <div
         className="
           w-full max-w-7xl rounded-[40px] 

@@ -35,7 +35,7 @@ export default function Footer() {
     return (
       <div className="bg-[#1A1A1A] pb-16 pt-32">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-10 lg:gap-y-0">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-y-0">
             <div>
               <div className="text-white flex items-center gap-4">
                 <Image

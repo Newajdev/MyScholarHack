@@ -3,7 +3,7 @@ import Container from "@/components/landing/Container";
 import SectionHead from "@/components/landing/SectionHead";
 export default function AboutPage() {
   return (
-    <div className="mt-[305px]">
+    <div className=" lg:mt-[305px]">
       <Container>
         <div className="py-20">
           <div>
@@ -84,7 +84,7 @@ export default function AboutPage() {
 
           <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-10 ">
             <div className="border border-[#C4C4C4] rounded-2xl flex flex-col justify-center items-center p-4">
-              <div className="w-full max-w-[568px] h-auto aspect-square md:h-[478px]">
+              <div className="w-full max-w-[568px] h-auto aspect-square h md:h-[478px]">
                 <Image
                   className="w-full h-full object-cover"
                   src={"/ceoProfile.png"}

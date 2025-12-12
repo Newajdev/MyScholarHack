@@ -15,7 +15,7 @@ export default function FeatureCard({
   style
 }) {
   return (
-    <div className="max-w-6xl mx-auto p-8">
+    <div className="max-w-6xl mx-auto">
       <div
         className={cn(
           "flex flex-col items-start gap-8 mb-16 rounded-3xl",

@@ -24,7 +24,7 @@ export default function Header() {
         <Container>
           <Navbar />
           {Pathname === "/" && (
-            <>
+            <div className="relative">
               <div className="w-full flex items-center justify-center">
                 <div className="pt-20 pb-14 flex flex-col w-full max-w-[1063px] justify-center text-center px-4 md:px-0">
                   <div className="flex justify-center">
@@ -40,7 +40,7 @@ export default function Header() {
                     essays that win. No made-up experiences. No generic AI
                     fluff. Just your unique story, told powerfully
                   </p>
-                  <div className="pt-10 flex flex-col md:flex-row gap-4 justify-center w-full">
+                  <div className="pt-10 px-10 lg:px-0 flex flex-col md:flex-row gap-4 justify-center w-full">
                     <PrimaryBtn
                       title={"Start Free Trial"}
                       icon={"line-md:arrow-right"}
@@ -54,16 +54,16 @@ export default function Header() {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-auto lg:h-[483px] bg-[#FFCA42] rounded-t-2xl">
+              <div className="w-full h-[184px] md:h-[367px] lg:h-[547px] bg-[#FFCA42] rounded-t-2xl absolute">
                 <Image
                   className="w-full h-full object-cover object-top px-2 pt-2 rounded-t-2xl"
                   src={"/Dashboard.png"}
                   width={1000}
-                  height={330}
+                  height={550}
                   alt="My Scholar Hack Dashboard"
                 />
               </div>
-            </>
+            </div>
           )}
           {Pathname === "/about" && (
             <>

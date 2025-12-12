@@ -7,7 +7,7 @@ export default function Title({ title }) {
         New
       </button>
 
-      <p className="text-white">{title}</p>
+      <p className="text-white text-sm md:text-base lg:text-base">{title}</p>
     </div>
   );
 }
