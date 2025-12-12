@@ -1,11 +1,11 @@
 "use client";
 import { Icon } from "@iconify/react";
 import { useState, useRef, useEffect } from "react";
-import LoadingModal from "@/app/component/DashboardComponent/Student/LoadingModal";
-import EssayResultModal from "@/app/component/DashboardComponent/Student/EssayResultModal";
-import FileUploadList from "@/app/component/DashboardComponent/Student/FileUploadList";
-import RecordingIndicator from "@/app/component/DashboardComponent/Student/RecordingIndicator";
-import AudioPlayer from "@/app/component/DashboardComponent/Student/AudioPlayer";
+import LoadingModal from "@/components/dashboard/Student/LoadingModal";
+import EssayResultModal from "@/components/dashboard/Student/EssayResultModal";
+import FileUploadList from "@/components/dashboard/Student/FileUploadList";
+import RecordingIndicator from "@/components/dashboard/Student/RecordingIndicator";
+import AudioPlayer from "@/components/dashboard/Student/AudioPlayer";
 import { useRouter } from "next/navigation";
 
 export default function Essays() {

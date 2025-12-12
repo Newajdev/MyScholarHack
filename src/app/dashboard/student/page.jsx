@@ -1,9 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import { Icon } from "@iconify/react";
-import AdminStatsCard from "@/app/component/DashboardComponent/Admin/AdminStatsCard";
-import ScholershipCard from "@/app/component/DashboardComponent/Student/ScholershipCard";
-import Table from "@/app/component/DashboardComponent/Table";
+import AdminStatsCard from "@/components/dashboard/Admin/AdminStatsCard";
+import ScholershipCard from "@/components/dashboard/Student/ScholershipCard";
+import Table from "@/components/dashboard/Table";
 import { useRouter } from "next/navigation";
 
 export default function StudentDashboard() {

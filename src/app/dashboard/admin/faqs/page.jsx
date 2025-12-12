@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
-import PrimaryBtn from "@/app/component/LandingComponent/PrimaryBtn";
+import PrimaryBtn from "@/components/landing/PrimaryBtn";
 
 export default function FAQs() {
   const [activeTab, setActiveTab] = useState("Pricing");
@@ -199,8 +199,8 @@ export default function FAQs() {
               setOpenIndex(0);
             }}
             className={`px-5 py-2 rounded-full border text-sm font-medium transition-all duration-200 ${activeTab === category
-                ? "bg-[#FCD34D] border-[#FCD34D] text-gray-900"
-                : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
+              ? "bg-[#FCD34D] border-[#FCD34D] text-gray-900"
+              : "bg-white border-gray-200 text-gray-600 hover:bg-gray-50"
               }`}
           >
             {category}
@@ -214,8 +214,8 @@ export default function FAQs() {
           <div
             key={index}
             className={`border rounded-xl transition-all duration-300 bg-white overflow-hidden ${openIndex === index
-                ? "border-yellow-400 shadow-sm"
-                : "border-gray-100"
+              ? "border-yellow-400 shadow-sm"
+              : "border-gray-100"
               }`}
           >
             <div
@@ -246,8 +246,8 @@ export default function FAQs() {
             </div>
             <div
               className={`transition-all duration-300 ease-in-out px-6 ${openIndex === index
-                  ? "max-h-96 opacity-100 pb-6"
-                  : "max-h-0 opacity-0 pb-0"
+                ? "max-h-96 opacity-100 pb-6"
+                : "max-h-0 opacity-0 pb-0"
                 }`}
             >
               <div className="text-gray-500 leading-relaxed border-t border-gray-100 pt-4">

@@ -1,10 +1,10 @@
 "use client";
-import Table from "@/app/component/DashboardComponent/Table";
+import Table from "@/components/dashboard/Table";
 import { Icon } from "@iconify/react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, useEffect, Suspense } from "react";
-import ViewEssayModal from "@/app/component/DashboardComponent/Student/ViewEssayModal";
-import CompareSelectionModal from "@/app/component/DashboardComponent/Student/CompareSelectionModal";
+import ViewEssayModal from "@/components/dashboard/Student/ViewEssayModal";
+import CompareSelectionModal from "@/components/dashboard/Student/CompareSelectionModal";
 
 // Moved outside to be reusable or just statically defined here for now
 const ESSAY_DATA = [
@@ -193,8 +193,8 @@ function ViewEssayContent() {
                     setShowFilterDropdown(false);
                   }}
                   className={`block px-4 py-2.5 text-sm w-full text-left transition-colors ${selectedSubject === subject
-                      ? "bg-[#FFF9E5] text-[#0C0C0D] font-medium"
-                      : "text-[#6D6E73] hover:bg-[#F8F9FA]"
+                    ? "bg-[#FFF9E5] text-[#0C0C0D] font-medium"
+                    : "text-[#6D6E73] hover:bg-[#F8F9FA]"
                     }`}
                 >
                   {subject}

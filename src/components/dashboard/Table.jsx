@@ -1,6 +1,8 @@
 "use client";
 import React, { useState } from "react";
 
+import { cn } from "@/lib/utils";
+
 export default function Table({ TableHeads, TableRows }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(10);
@@ -52,9 +54,11 @@ export default function Table({ TableHeads, TableRows }) {
             {TableHeads.map((head, idx) => (
               <th
                 key={idx}
-                className={`text-center font-medium text-[#0C0C0D] py-[22px]
-                ${idx === 0 ? "rounded-tl-2xl" : ""}
-                ${idx === TableHeads.length - 1 ? "rounded-tr-2xl" : ""}`}
+                className={cn(
+                  "text-center font-medium text-[#0C0C0D] py-[22px]",
+                  idx === 0 && "rounded-tl-2xl",
+                  idx === TableHeads.length - 1 && "rounded-tr-2xl"
+                )}
                 style={{ width: head.width }}
               >
                 {head.Title}

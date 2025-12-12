@@ -25,7 +25,11 @@ export default function Footer() {
   ];
 
   if (
-    !Pathname.startsWith("/authentication") &&
+    !Pathname.startsWith("/signin") &&
+    !Pathname.startsWith("/forgot-password") &&
+    !Pathname.startsWith("/otp") &&
+    !Pathname.startsWith("/register") &&
+    !Pathname.startsWith("/verify-email") &&
     !Pathname.startsWith("/dashboard")
   ) {
     return (
@@ -64,7 +68,9 @@ export default function Footer() {
             </div>
             <div className="flex justify-start lg:justify-end mt-8 lg:mt-0">
               <div className="">
-                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">Company</p>
+                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">
+                  Company
+                </p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {company.map((item, idx) => (
                     <li key={idx} className="">
@@ -76,7 +82,9 @@ export default function Footer() {
             </div>
             <div className="flex justify-start lg:justify-end mt-8 lg:mt-0">
               <div className="w-full lg:w-[211px]">
-                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">Contact</p>
+                <p className="text-[#FFFFFF] text-xl lg:text-2xl font-semibold">
+                  Contact
+                </p>
                 <ul className="text-white flex flex-col gap-3 mt-3.5">
                   {contacts.map((item, idx) => (
                     <li key={idx}>{item}</li>
@@ -86,7 +94,9 @@ export default function Footer() {
             </div>
           </div>
           <div className="text-white border-t-2 border-[#D9D9D9] flex flex-col-reverse md:flex-row items-center justify-between mt-10 lg:mt-[72px] pt-4 gap-y-4">
-            <p className="text-center md:text-left">© 2025 MyScholarHack. All rights reserved.</p>
+            <p className="text-center md:text-left">
+              © 2025 MyScholarHack. All rights reserved.
+            </p>
             <p>Privacy and Policy</p>
           </div>
         </Container>

@@ -1,5 +1,7 @@
 "use client";
 
+import { cn } from "@/lib/utils";
+
 export default function FeatureCard({
   title,
   description,
@@ -10,12 +12,16 @@ export default function FeatureCard({
   smartFeatures,
   refineBy,
   imagePosition = "right",
+  style
 }) {
   return (
     <div className="max-w-6xl mx-auto p-8">
       <div
-        className={`flex flex-col ${imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row"
-          } items-start gap-8 mb-16 rounded-3xl`}
+        className={cn(
+          "flex flex-col items-start gap-8 mb-16 rounded-3xl",
+          imagePosition === "left" ? "lg:flex-row-reverse" : "lg:flex-row",
+          style
+        )}
       >
 
         <div className="w-full lg:w-[382px] h-[300px] lg:h-[484px] bg-linear-to-br from-gray-100 to-gray-200 rounded-lg shrink-0 relative overflow-hidden">

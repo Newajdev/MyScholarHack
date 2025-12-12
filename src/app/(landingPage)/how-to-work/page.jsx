@@ -1,5 +1,5 @@
-import Container from "../../component/LandingComponent/Container";
-import WorkingSteps from "../../component/LandingComponent/WorkingSteps";
+import Container from "@/components/landing/Container";
+import WorkingSteps from "@/components/landing/WorkingSteps";
 
 export default function Howtowork() {
   const steps = [

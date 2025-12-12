@@ -1,5 +1,5 @@
 "use client"
-import Table from "@/app/component/DashboardComponent/Table";
+import Table from "@/components/dashboard/Table";
 
 export default function UserInfo() {
   const TableHeads = [
@@ -15,8 +15,8 @@ export default function UserInfo() {
       render: (row) => (
         <span
           className={`px-3 py-1 rounded-full text-sm font-medium ${row.status === "Active"
-              ? "bg-[#E6F8EF] text-[#00A47E]" 
-              : "bg-[#FEE4E2] text-[#B42318]" 
+            ? "bg-[#E6F8EF] text-[#00A47E]"
+            : "bg-[#FEE4E2] text-[#B42318]"
             }`}
         >
           {row.status}

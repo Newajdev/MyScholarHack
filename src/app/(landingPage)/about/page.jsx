@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Container from "../../component/LandingComponent/Container";
-import SectionHead from "../../component/LandingComponent/SectionHead";
+import Container from "@/components/landing/Container";
+import SectionHead from "@/components/landing/SectionHead";
 export default function AboutPage() {
   return (
     <div className="mt-[305px]">

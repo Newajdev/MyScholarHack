@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import ScholershipCard from "../../../component/DashboardComponent/Student/ScholershipCard";
+import ScholershipCard from "@/components/dashboard/Student/ScholershipCard";
 
 export default function AllScholarship() {
   const [scholership, setScholership] = useState([]);

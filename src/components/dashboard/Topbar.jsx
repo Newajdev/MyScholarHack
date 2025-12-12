@@ -26,7 +26,7 @@ export default function Topbar({ onMenuClick }) {
   }, []);
 
   const handleLogout = () => {
-    console.log("Logging out...");
+
   };
 
   return (

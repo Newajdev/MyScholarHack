@@ -1,5 +1,5 @@
 "use client";
-import Table from "@/app/component/DashboardComponent/Table";
+import Table from "@/components/dashboard/Table";
 import { Icon } from "@iconify/react";
 import { useState, useEffect } from "react";
 

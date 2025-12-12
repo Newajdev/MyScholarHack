@@ -1,7 +1,7 @@
 "use client";
-import AdminStatsCard from "../../component/DashboardComponent/Admin/AdminStatsCard";
-import SalesTrackGraph from "../../component/DashboardComponent/Admin/SalesTrackGraph";
-import SubscriptionPieChart from "../../component/DashboardComponent/Admin/SubscriptionPieChart";
+import AdminStatsCard from "@/components/dashboard/Admin/AdminStatsCard";
+import SalesTrackGraph from "@/components/dashboard/Admin/SalesTrackGraph";
+import SubscriptionPieChart from "@/components/dashboard/Admin/SubscriptionPieChart";
 
 export default function AdminDashboard() {
     const stats = [

@@ -1,7 +1,7 @@
 "use client";
-import RevenueChart from "../../../component/DashboardComponent/Admin/Analytics/RevenueChart";
-import EssayGenerationChart from "../../../component/DashboardComponent/Admin/Analytics/EssayGenerationChart";
-import ActiveUserChart from "../../../component/DashboardComponent/Admin/Analytics/ActiveUserChart";
+import RevenueChart from "@/components/dashboard/Admin/Analytics/RevenueChart";
+import EssayGenerationChart from "@/components/dashboard/Admin/Analytics/EssayGenerationChart";
+import ActiveUserChart from "@/components/dashboard/Admin/Analytics/ActiveUserChart";
 
 export default function Analytics() {
     return (

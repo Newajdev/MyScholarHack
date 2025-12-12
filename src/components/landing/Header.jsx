@@ -12,7 +12,11 @@ export default function Header() {
   const Pathname = usePathname();
 
   if (
-    !Pathname.startsWith("/authentication") &&
+    !Pathname.startsWith("/signin")&&
+    !Pathname.startsWith("/forgot-password")&&
+    !Pathname.startsWith("/otp")&&
+    !Pathname.startsWith("/register")&&
+    !Pathname.startsWith("/verify-email") &&
     !Pathname.startsWith("/dashboard")
   ) {
     return (

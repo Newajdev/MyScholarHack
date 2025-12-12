@@ -1,6 +1,6 @@
 import React from "react";
-import Container from "../../component/LandingComponent/Container";
-import FaqTabs from "../../component/LandingComponent/faq/FaqTabs";
+import Container from "@/components/landing/Container";
+import FaqTabs from "@/components/landing/faq/FaqTabs";
 
 export default function FAQ() {
   return (

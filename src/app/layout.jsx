@@ -1,7 +1,7 @@
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-import Header from "./component/LandingComponent/Header";
-import Footer from "./component/LandingComponent/Footer";
+import Header from "@/components/landing/Header";
+import Footer from "@/components/landing/Footer";
 
 const urbanist = Urbanist({
   subsets: ["urbanist"],
@@ -18,11 +18,11 @@ export default function RootLayout({ children }) {
     <html lang="en" data-theme="light">
       <body className={`${urbanist.className} antialiased`}>
 
-        <Header/>        
+        <Header />
 
-          {children}
-      
-        <Footer/>
+        {children}
+
+        <Footer />
       </body>
     </html>
   );

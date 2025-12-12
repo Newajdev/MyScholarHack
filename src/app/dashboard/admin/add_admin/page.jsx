@@ -1,8 +1,8 @@
 "use client"
 "use client";
 import { useState } from "react";
-import Table from "@/app/component/DashboardComponent/Table";
-import PrimaryBtn from "@/app/component/LandingComponent/PrimaryBtn";
+import Table from "@/components/dashboard/Table";
+import PrimaryBtn from "@/components/landing/PrimaryBtn";
 import { Icon } from "@iconify/react";
 
 export default function AddAdmin() {
@@ -39,7 +39,7 @@ export default function AddAdmin() {
 
   const saveAdmin = () => {
     // Logic to save admin
-    console.log(newAdmin);
+
     alert("Admin Added Successfully");
     closeAddModal();
   };

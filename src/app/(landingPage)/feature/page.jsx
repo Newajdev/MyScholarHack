@@ -1,5 +1,5 @@
-import Container from "../../component/LandingComponent/Container";
-import FeatureCard from "../../component/LandingComponent/FeatureCard";
+import Container from "@/components/landing/Container";
+import FeatureCard from "@/components/landing/FeatureCard";
 
 export default function Feature() {
   const features = [

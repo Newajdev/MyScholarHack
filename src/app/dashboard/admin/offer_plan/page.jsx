@@ -1,6 +1,6 @@
 "use client";
-import Table from "@/app/component/DashboardComponent/Table";
-import PrimaryBtn from "@/app/component/LandingComponent/PrimaryBtn";
+import Table from "@/components/dashboard/Table";
+import PrimaryBtn from "@/components/landing/PrimaryBtn";
 import { Icon } from "@iconify/react";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ export default function offer_plan() {
   };
 
   const createBanner = () => {
-    console.log(newOffer);
+
     alert("Offer Banner Created Successfully");
     closeCreateModal();
   };

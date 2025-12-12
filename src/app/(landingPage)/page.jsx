@@ -1,15 +1,15 @@
 "use client";
 
-import Container from "../component/LandingComponent/Container";
-import SectionHead from "../component/LandingComponent/SectionHead";
-import PrimaryBtn from "../component/LandingComponent/PrimaryBtn";
-import ProblemPoint from "../component/LandingComponent/ProblemPoint";
-import SolutionSteps from "../component/LandingComponent/SolutionSteps";
-import FeatureCard from "../component/LandingComponent/FeaturesCard";
-import ReviewScroll from "../component/LandingComponent/ReviewScroll";
-import PricingSection from "../component/LandingComponent/pricings/PricingSection";
-import SecurityCard from "../component/LandingComponent/securityCard";
-import HeroCTA from "../component/LandingComponent/HeroCTA";
+import Container from "@/components/landing/Container";
+import SectionHead from "@/components/landing/SectionHead";
+import PrimaryBtn from "@/components/landing/PrimaryBtn";
+import ProblemPoint from "@/components/landing/ProblemPoint";
+import SolutionSteps from "@/components/landing/SolutionSteps";
+import FeatureCard from "@/components/landing/FeaturesCard";
+import ReviewScroll from "@/components/landing/ReviewScroll";
+import PricingSection from "@/components/landing/pricings/PricingSection";
+import SecurityCard from "@/components/landing/securityCard";
+import HeroCTA from "@/components/landing/HeroCTA";
 
 export default function Home() {
   return (
@@ -181,7 +181,7 @@ export default function Home() {
         </section>
       </Container>
 
-      {/* Pricing */}
+
       <PricingSection />
 
       <Container>

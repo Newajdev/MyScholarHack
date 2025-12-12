@@ -1,5 +1,6 @@
 
-import StatusBtn from "../LandingComponent/statusBtn";
+import StatusBtn from "./statusBtn";
+import { cn } from "@/lib/utils";
 
 export default function SectionHead({ title, description, Status, statusStyle }) {
   return (
